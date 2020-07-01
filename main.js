@@ -1,67 +1,43 @@
-var app = new Vue({
+var data = { a: 1, };
+var vm = new Vue({
+  el: '#example',
+  data: data,
+});
+console.log(vm.a == data.a);
+console.log(vm.a === data.a);
+
+vm.a = 2;
+console.log(vm.a);
+console.log(data.a);
+
+data.a = 3;
+console.log(vm.a);
+console.log(data.a);
+
+vm.b = 'Hi!';
+console.log(vm.b);
+console.log(data.b);
+
+/****************/
+
+var obj = {
+  foo: 'bar',
+};
+// Object.freeze(obj);
+new Vue({
   el: '#app',
+  data: obj,
+});
+
+/****************/
+
+new Vue({
   data: {
-    product: 'Boots',
-    message: 'Hello World!',
+    a: 1,
+  },
+  created: function() {
+    console.log('a is: ' + this.a);
   },
 });
 
-var app2 = new Vue({
-  el: '#app-2',
-  data: {
-    message: 'You loaded this page on ' + new Date().toLocaleString(),
-  },
-});
 
-var app3 = new Vue({
-  el: '#app-3',
-  data: {
-    seen: true,
-  }
-});
-
-var app4 = new Vue({
-  el: '#app-4',
-  data: {
-    todos: [
-      { text: 'Learn JavaScript' },
-      { text: 'Learn Vue' },
-      { text: 'Build something awesome' },
-    ],
-  },
-});
-
-var app5 = new Vue({
-  el: '#app-5',
-  data: {
-    message: 'Hello Vue.js!',
-  },
-  methods: {
-    reverseMessage: function() {
-      this.message = this.message.split('').reverse().join('')
-    },
-  },
-});
-
-var app6 = new Vue({
-  el: '#app-6',
-  data: {
-    message: 'Hello Vue!'
-  },
-});
-
-Vue.component('todo-item', {
-  props: ['todo'],
-  template: '<li>{{ todo.text }}</li>',
-});
-
-var app7 = new Vue({
-  el: '#app-7',
-  data: {
-    groceryList: [
-      {id: 0, text: 'Vegetables'},
-      {id: 1, text: 'Cheese'},
-      {id: 2, text: 'anything'},
-    ],
-  },
-})
