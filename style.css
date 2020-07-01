@@ -1,7 +1,9 @@
-.class {
-  color: red;
+#square {
+  height: 100px;
+  width: 100px;
+  background-color: salmon;
 }
 
-.class2 {
-  color: blue;
+#square.rotate {
+  transform: rotate(45deg);
 }

@@ -7,10 +7,13 @@
   <title>Document</title>
 </head>
 <body>
-  <div id="app">
-    <p>{{ foo }}</p>
-    <button v-on:click="foo = 'baz'">Change foo</button>
-  </div>
+  <p id="app">Message: {{ msg }}</p><br>
+  <p id="app-2" v-once>This will never change: {{ msg2 }}</p>
+
+  <p id="app-3">{{ rawHtml }}</p>
+  <p id="app-4" v-html="rawHtml"></p>
+
+  <div id="square" @click="rotate"></div>
 
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
   <script src="main.js"></script>
