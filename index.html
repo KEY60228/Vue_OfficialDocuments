@@ -7,26 +7,25 @@
   <title>Document</title>
 </head>
 <body>
-  <div id="example">
-    <p>Original message: "{{ message }}"</p>
-    <p>Reversed message: "{{ reversedMessage }}"</p>
+  <div id="app" class="static" v-bind:class="classObject">
+    <p>Hello Vue</p>
   </div>
 
-  <div id="demo">
-    {{ fullName }}
+  <div id="app-2" v-bind:class="[isActive ? activeClass : '', errorClass]">
+    <p>Hello Vue</p>
   </div>
 
-  <div id="watch-example">
-    <p>
-      Ask a yes/no question:
-      <input v-model="question">
-    </p>
-    <p>{{ answer }}</p>
+  <div id="app-3" v-bind:style="[styleObject, otherStyles]">
+    <p>Hello Vue</p>
   </div>
 
+  <div v-bind:style="{ display: ['-webkit-box', '-ms-flexbox', 'flex'] }">
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+  </div>
+  
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/axios@0.12.0/dist/axios.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/lodash@4.13.1/lodash.min.js"></script>
   <script src="main.js"></script>
 </body>
 </html>
