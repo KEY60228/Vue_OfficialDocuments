@@ -1,9 +1,0 @@
-#square {
-  height: 100px;
-  width: 100px;
-  background-color: salmon;
-}
-
-#square.rotate {
-  transform: rotate(45deg);
-}

@@ -7,15 +7,26 @@
   <title>Document</title>
 </head>
 <body>
-  <p id="app">Message: {{ msg }}</p><br>
-  <p id="app-2" v-once>This will never change: {{ msg2 }}</p>
+  <div id="example">
+    <p>Original message: "{{ message }}"</p>
+    <p>Reversed message: "{{ reversedMessage }}"</p>
+  </div>
 
-  <p id="app-3">{{ rawHtml }}</p>
-  <p id="app-4" v-html="rawHtml"></p>
+  <div id="demo">
+    {{ fullName }}
+  </div>
 
-  <div id="square" @click="rotate"></div>
+  <div id="watch-example">
+    <p>
+      Ask a yes/no question:
+      <input v-model="question">
+    </p>
+    <p>{{ answer }}</p>
+  </div>
 
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/axios@0.12.0/dist/axios.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lodash@4.13.1/lodash.min.js"></script>
   <script src="main.js"></script>
 </body>
 </html>
