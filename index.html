@@ -7,22 +7,37 @@
   <title>Document</title>
 </head>
 <body>
-  <div id="app" class="static" v-bind:class="classObject">
-    <p>Hello Vue</p>
-  </div>
+  <div id="app">
+    <template v-if="awesome">
+      <h1>Vue is awesome!</h1>
+      <h1>more than jQuery!</h1>
+    </template>
+    <template v-else>
+      <h1>oh...</h1>
+      <h1>no...</h1>
+    </template>
+    
+    <template v-if="char === 'A'">
+      <p>A</p>
+    </template>
+    <template v-else-if="char === 'B'">
+      <p>B</p>
+    </template>
+    <template v-else-if="char === 'C'">
+      <p>C</p>
+    </template>
+    <template v-else>
+      <p>not a or b or c</p>
+    </template>
 
-  <div id="app-2" v-bind:class="[isActive ? activeClass : '', errorClass]">
-    <p>Hello Vue</p>
-  </div>
-
-  <div id="app-3" v-bind:style="[styleObject, otherStyles]">
-    <p>Hello Vue</p>
-  </div>
-
-  <div v-bind:style="{ display: ['-webkit-box', '-ms-flexbox', 'flex'] }">
-    <div class="item"></div>
-    <div class="item"></div>
-    <div class="item"></div>
+    <template v-if="loginType === 'username'">
+      <label>Username</label>
+      <input placeholder="Enter your username" key="username-input">
+    </template>
+    <template v-else>
+      <label>Email</label>
+      <input placeholder="Enter your email address" key="email-input">
+    </template>
   </div>
   
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
