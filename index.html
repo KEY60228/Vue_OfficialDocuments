@@ -8,30 +8,8 @@
 </head>
 <body>
   <div id="app">
-    <button-counter></button-counter>
-    <button-counter></button-counter>
-    <button-counter></button-counter>
-    <button-counter></button-counter>
-  </div>
-
-  <div id="app2">
-    <blog-post v-for="post in posts" v-bind:key="post.id" v-bind:title="post.title"></blog-post>
-  </div>
-
-  <div id="app3">
-    <div :style="{ fontSize: postFontSize + 'em' }">
-      <blog-post-2 v-for="post in posts" v-bind:key="post.id" v-bind:post="post" v-on:enlarge-text="onEnlargeText"></blog-post-2>
-    </div>
-  </div>
-
-  <div id="app4">
-    <custom-input v-model="searchText"></custom-input>
-  </div>
-
-  <div id="app5">
-    <alert-box>
-      Something bad is happened.
-    </alert-box>
+    <component-a v-bind:title="title"></component-a>
+    <!-- <component-b v-bind:author="author"></component-b> -->
   </div>
   
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
