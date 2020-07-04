@@ -1,51 +1,60 @@
-exm1 = new Vue({
+let exm1 = new Vue({
   el: '#example-1',
   data: {
-    counter: 0,
+    message: '',
   },
 });
 
-exm2 = new Vue({
+let exm2 = new Vue({
   el: '#example-2',
   data: {
-    name: 'Vue.js',
-  },
-  methods: {
-    greet: function (event) {
-      alert('Hello' + this.name + '!');
-      if (event) {
-        alert(event.target.tagName);
-      }
-    },
+    message: '',
   },
 });
 
-exm3 = new Vue({
+let exm3 = new Vue({
   el: '#example-3',
-  methods: {
-    say: function (message) {
-      alert(message);
-    }
+  data: {
+    checked: false,
   },
 });
 
-exm4 = new Vue({
+let exm4 = new Vue({
   el: '#example-4',
-  methods: {
-    warn: function (message, event) {
-      if (event) {
-        event.preventDefault();
-      }
-      alert(message);
-    },
+  data: {
+    checkedNames: [],
   },
 });
 
-exm5 = new Vue({
+let exm5 = new Vue({
   el: '#example-5',
-  methods: {
-    submit: function () {
-      alert('submit!');
-    },
+  data: {
+    picked: '',
+  },
+});
+
+let exm6 = new Vue({
+  el: '#example-6',
+  data: {
+    selected: '',
+  },
+});
+
+let exm7 = new Vue({
+  el: '#example-7',
+  data: {
+    selected: [],
+  },
+});
+
+let exm8 = new Vue({
+  el: '#example-8',
+  data: {
+    selected: 'A',
+    options: [
+      { text: 'One', value: 'A' },
+      { text: 'Two', value: 'B' },
+      { text: 'Three', value: 'C' },
+    ],
   },
 });
