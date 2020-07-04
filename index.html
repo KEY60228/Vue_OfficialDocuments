@@ -8,36 +8,35 @@
 </head>
 <body>
   <div id="app">
-    <template v-if="awesome">
-      <h1>Vue is awesome!</h1>
-      <h1>more than jQuery!</h1>
-    </template>
-    <template v-else>
-      <h1>oh...</h1>
-      <h1>no...</h1>
-    </template>
-    
-    <template v-if="char === 'A'">
-      <p>A</p>
-    </template>
-    <template v-else-if="char === 'B'">
-      <p>B</p>
-    </template>
-    <template v-else-if="char === 'C'">
-      <p>C</p>
-    </template>
-    <template v-else>
-      <p>not a or b or c</p>
-    </template>
+    <ul id="example-1">
+      <li v-for="item in items" key="item.message">
+        {{ item.message }}
+      </li>
+    </ul>
 
-    <template v-if="loginType === 'username'">
-      <label>Username</label>
-      <input placeholder="Enter your username" key="username-input">
-    </template>
-    <template v-else>
-      <label>Email</label>
-      <input placeholder="Enter your email address" key="email-input">
-    </template>
+    <ul id="example-2">
+      <li v-for="(item, index) in items">
+        {{ parentMessage }} - {{ index }} - {{ item.message }}
+      </li>
+    </ul>
+
+    <ul id="example-3" class="demo">
+      <li v-for="(value, name, index) in object">
+        {{ index }}. {{ name }}: {{ value }}
+      </li>
+    </ul>
+
+    <ul id="example-4">
+      <li v-for="n in evenNumbers">
+        {{ n }}
+      </li>
+    </ul>
+
+    <ul id="example-5">
+      <li v-for="n in 10">
+        {{ n }}
+      </li>
+    </ul>
   </div>
   
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
