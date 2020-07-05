@@ -1,34 +1,24 @@
 const compA = {
-  props: {
-    title: String,
-    likes: Number,
-    isPublished: Boolean,
-    commentIds: Array,
-    author: Object,
-    callback: Function,
-    contactsPromise: Promise,
+  model: {
+    prop: 'checked',
+    event: 'change',
   },
-  template: '<h3>{{ title }}</h3>'
+  props: {
+    checked: Boolean,
+  },
+  template: `
+    <input type="checkbox" v-bind:checked="checked" v-on:change="$emit('change', $event.target.checked)">
+  `
 };
 
 const app = new Vue({
   el:'#app',
-  data: {
-    post: { 
-      id: 1, 
-      title: 'Hello', 
-      likes: 39, 
-      isPublished: true, 
-      commentIds: ['GUCCI', 'PORI'], 
-      author: {
-        name: 'GUCCI'
-      }, 
-      callback: function() {
-        alert('Hi!')
-      },
+  components: {
+    'base-checkbox': compA,
+  },
+  methods: {
+    lovingVue: function() {
+      alert("I Love Vue!");
     },
   },
-  components: {
-    'blog-post': compA,
-  }
 });
