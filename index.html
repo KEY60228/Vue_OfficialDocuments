@@ -8,8 +8,7 @@
 </head>
 <body>
   <div id="app">
-    <component-a v-bind:title="title"></component-a>
-    <!-- <component-b v-bind:author="author"></component-b> -->
+    <blog-post v-bind:title="post.title + ' by ' + post.author.name"></blog-post>
   </div>
   
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
