@@ -1,15 +1,20 @@
 const app = new Vue({
+  el: '#app',
   data: {
-    foo: 1,
+    show: true,
   },
-  computed: {
-    bar: function() {
-      alert('Hi!');
-    },
+});
+
+const app2 = new Vue({
+  el: '#app2',
+  data: {
+    show: true,
   },
-  methods: {
-    baz: function() {
-      alert('Hello!');
-    },
+});
+
+const app3 = new Vue({
+  el: '#app3',
+  data: {
+    show: true,
   },
 });

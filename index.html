@@ -8,7 +8,30 @@
 </head>
 <body>
   <div id="app">
-    I cannot understand what they're talking about... ;(
+    <button v-on:click="show = !show">
+      Toggle
+    </button>
+    <transition name="fade">
+      <p v-if="show">Hello</p>
+    </transition>
+  </div>
+
+  <div id="app2">
+    <button @click="show = !show">
+      Toggle render
+    </button>
+    <transition name="slide-fade">
+      <p v-if="show">hello</p>
+    </transition>
+  </div>
+
+  <div id="app3">
+    <button @click="show = !show">
+      Toggle show
+    </button>
+    <transition name="bounce">
+      <p v-if="show">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris facilisis enim libero, at lacinia diam fermentum id. Pellentesque habitant morbi tristique senectus et netus.</p>
+    </transition>
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
