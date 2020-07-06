@@ -7,19 +7,8 @@
   <title>Document</title>
 </head>
 <body>
-  <div id="dynamic-component-demo">
-    <button
-      v-for="tab in tabs"
-      v-bind:key="tab"
-      v-bind:class="['tab-button', { active: currentTab === tab }]"
-      v-on:click="currentTab = tab"
-    >
-      {{ tab }}
-    </button>
-
-    <keep-alive>
-      <component v-bind:is="currentTabComponent" class="tab"></component>
-    </keep-alive>
+  <div id="app">
+    I cannot understand what they're talking about... ;(
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
