@@ -7,9 +7,30 @@
   <title>Document</title>
 </head>
 <body>
-  <div id="app">
-    I cannot understand what they're talking about... ;(
-  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.4/gsap.min.js"></script>
+
+<div id="animated-number-demo">
+  <input v-model.number="number" type="number" step="20">
+  <p>{{ animatedNumber }}</p>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/tween.js@16.3.4"></script>
+<script src="https://cdn.jsdelivr.net/npm/color-js@1.0.3"></script>
+
+<div id="example-7">
+  <input
+    v-model="colorQuery"
+    v-on:keyup.enter="updateColor"
+    placeholder="Enter a color"
+  >
+  <button v-on:click="updateColor">Update</button>
+  <p>Preview:</p>
+  <span
+    v-bind:style="{ backgroundColor: tweenedCSSColor }"
+    class="example-7-color-preview"
+  ></span>
+  <p>{{ tweenedCSSColor }}</p>
+</div>
 
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
   <script src="main.js"></script>
